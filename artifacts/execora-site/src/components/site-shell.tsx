@@ -139,8 +139,8 @@ export function SiteFooter({ brand = 'execora' }: { brand?: SiteBrand }) {
               <p className="eyebrow mt-8 text-primary-foreground/45">Our Office</p>
               <div className="mt-5 flex flex-col gap-3 text-sm text-primary-foreground/75">
                 <span>New Delhi, INDIA</span>
-                <span>phoneno</span>
-                <span>email id</span>
+                <span>phone number</span>
+                <span>company email id</span>
               </div>
             </div>
             <div>
@@ -148,8 +148,8 @@ export function SiteFooter({ brand = 'execora' }: { brand?: SiteBrand }) {
               <div className="mt-5 flex flex-col items-start gap-3 text-sm text-primary-foreground/75">
                 <Link href="/about" className="transition-colors hover:text-accent" data-testid="link-footer-about">About</Link>
                 <Link href="/services" className="transition-colors hover:text-accent" data-testid="link-footer-services">Services</Link>
-                <span>Terms of use</span>
-                <span>Privacy policy</span>
+                <Link href="/terms-and-conditions" className="transition-colors hover:text-accent" data-testid="link-footer-terms">Terms of use</Link>
+                <Link href="/privacy-policy" className="transition-colors hover:text-accent" data-testid="link-footer-privacy">Privacy policy</Link>
               </div>
             </div>
             <div>

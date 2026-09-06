@@ -4,5 +4,5 @@
   "defaultTitle": "G2G Research | Market research and data collection",
   "defaultDescription": "G2G Research provides reliable market research, data collection, B2B, healthcare, and IT decision-maker panel services.",
   "socialImagePath": "/og-image.svg",
-  "routes": ["/", "/about", "/services", "/panel", "/contact"]
+  "routes": ["/", "/about", "/services", "/panel", "/contact", "/privacy-policy", "/terms-and-conditions"]
 }

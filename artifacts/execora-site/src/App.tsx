@@ -9,6 +9,8 @@ import About from '@/pages/about';
 import Services from '@/pages/services';
 import Panel from '@/pages/panel';
 import Contact from '@/pages/contact';
+import PrivacyPolicy from '@/pages/privacy-policy';
+import TermsAndConditions from '@/pages/terms-and-conditions';
 import {
   Route,
   Switch,
@@ -29,6 +31,8 @@ function Router() {
         <Route path="/services" component={Services} />
         <Route path="/panel" component={Panel} />
         <Route path="/contact" component={Contact} />
+        <Route path="/privacy-policy" component={PrivacyPolicy} />
+        <Route path="/terms-and-conditions" component={TermsAndConditions} />
         <Route component={NotFound} />
       </Switch>
     </RoutedErrorBoundary>

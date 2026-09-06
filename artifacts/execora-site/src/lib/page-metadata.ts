@@ -19,8 +19,8 @@ const metadataByPath: Record<string, PageMetadata> = {
     description: 'Meet Execora, a senior-led strategic consulting partner for leadership teams navigating change, growth and important decisions.',
   },
   '/services': {
-    title: 'Services | Strategy, operations and growth | Execora',
-    description: 'Explore Execora services across strategy, operating performance, scale readiness and leadership effectiveness.',
+    title: 'Our Services | B2B, ITDM, HealthCare and B2C | G2G Research',
+    description: 'Explore G2G Research services across B2B, ITDM, HealthCare and B2C market research and data collection.',
   },
   '/panel': {
     title: 'Our panel | Experienced operators and strategists | Execora',
@@ -29,6 +29,14 @@ const metadataByPath: Record<string, PageMetadata> = {
   '/contact': {
     title: 'Contact Execora | Start a strategic conversation',
     description: 'Bring Execora the decision or change you are navigating and start a thoughtful conversation with our consulting team.',
+  },
+  '/privacy-policy': {
+    title: 'Privacy Policy | G2G Research',
+    description: 'Read the G2G Research privacy policy and learn how information is handled across our website and research services.',
+  },
+  '/terms-and-conditions': {
+    title: 'Terms and Conditions | G2G Research',
+    description: 'Read the terms and conditions for using the G2G Research website and engaging with its market research services.',
   },
 };
 
