@@ -1,8 +1,8 @@
 {
   "siteUrl": "https://g2gresearch.net",
-  "siteName": "Execora",
-  "defaultTitle": "Execora | Strategic consulting for leadership teams",
-  "defaultDescription": "Execora is a senior-led strategic consulting partner helping ambitious leadership teams make clearer decisions, strengthen operations, and grow with confidence.",
+  "siteName": "G2G Research",
+  "defaultTitle": "G2G Research | Market research and data collection",
+  "defaultDescription": "G2G Research provides reliable market research, data collection, B2B, healthcare, and IT decision-maker panel services.",
   "socialImagePath": "/og-image.svg",
   "routes": ["/", "/about", "/services", "/panel", "/contact"]
 }

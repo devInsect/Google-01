@@ -1,0 +1,1 @@
+- [Execora site build](execora-site-build.md) — production builds require an explicit PORT environment variable because the Vite config validates it at startup.

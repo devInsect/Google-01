@@ -10,7 +10,11 @@ const navigation = [
   { href: '/contact', label: 'Contact' },
 ];
 
-export function Logo() {
+export type SiteBrand = 'execora' | 'g2g';
+
+export function Logo({ brand = 'execora' }: { brand?: SiteBrand }) {
+  const label = brand === 'g2g' ? 'G2G Research' : 'execora';
+
   return (
     <Link href="/" className="inline-flex items-center gap-2" data-testid="link-logo">
       <span className="grid h-7 w-7 place-items-center rounded-[8px] bg-accent text-primary" aria-hidden="true">
@@ -19,12 +23,12 @@ export function Logo() {
           <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-[3px] bg-current" />
         </span>
       </span>
-      <span className="display text-[1.15rem] font-extrabold tracking-[-.07em]">execora</span>
+      <span className="display text-[1.05rem] font-extrabold tracking-[-.07em]">{label}</span>
     </Link>
   );
 }
 
-export function SiteHeader() {
+export function SiteHeader({ brand = 'execora' }: { brand?: SiteBrand }) {
   const [open, setOpen] = useState(false);
   const [location] = useLocation();
   const activePath = location.split('?')[0].replace(/\/+$/, '') || '/';
@@ -54,7 +58,7 @@ export function SiteHeader() {
   return (
     <header className="relative z-30 border-b border-foreground/10 bg-background/95">
       <div className="container-shell flex h-[4.75rem] items-center justify-between">
-        <Logo />
+        <Logo brand={brand} />
         <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
           {navigation.map((item) => (
             <Link
@@ -124,7 +128,45 @@ export function SiteHeader() {
   );
 }
 
-export function SiteFooter() {
+export function SiteFooter({ brand = 'execora' }: { brand?: SiteBrand }) {
+  if (brand === 'g2g') {
+    return (
+      <footer className="bg-primary text-primary-foreground">
+        <div className="container-shell py-14 md:py-20">
+          <div className="grid gap-12 md:grid-cols-[1fr_.8fr_1fr]">
+            <div>
+              <Logo brand="g2g" />
+              <p className="eyebrow mt-8 text-primary-foreground/45">Our Office</p>
+              <div className="mt-5 flex flex-col gap-3 text-sm text-primary-foreground/75">
+                <span>New Delhi, INDIA</span>
+                <span>phoneno</span>
+                <span>email id</span>
+              </div>
+            </div>
+            <div>
+              <p className="eyebrow text-primary-foreground/45">Quick Links</p>
+              <div className="mt-5 flex flex-col items-start gap-3 text-sm text-primary-foreground/75">
+                <Link href="/about" className="transition-colors hover:text-accent" data-testid="link-footer-about">About</Link>
+                <Link href="/services" className="transition-colors hover:text-accent" data-testid="link-footer-services">Services</Link>
+                <span>Terms of use</span>
+                <span>Privacy policy</span>
+              </div>
+            </div>
+            <div>
+              <p className="eyebrow text-primary-foreground/45">Newsletter</p>
+              <p className="mt-5 text-sm text-primary-foreground/75">Subscribe to our Newsletter</p>
+              <a href="mailto:hello@execora.co?subject=Newsletter subscription" className="mt-4 inline-flex border-b border-primary-foreground/30 pb-2 text-sm text-primary-foreground/75 transition-colors hover:border-accent hover:text-accent" data-testid="link-footer-newsletter">Email goes here</a>
+              <a href="mailto:hello@execora.co?subject=Newsletter subscription" className="mt-4 inline-flex text-sm font-semibold text-accent" data-testid="link-footer-newsletter-submit">Submit <ArrowUpRight size={14} className="ml-1" /></a>
+            </div>
+          </div>
+          <div className="mt-16 border-t border-primary-foreground/15 pt-5 text-xs text-primary-foreground/45">
+            © 2021 G2G Research, All Right Reserved.
+          </div>
+        </div>
+      </footer>
+    );
+  }
+
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container-shell py-14 md:py-20">
@@ -166,7 +208,7 @@ export function SiteFooter() {
   );
 }
 
-export function PageFrame({ children }: { children: ReactNode }) {
+export function PageFrame({ children, brand = 'execora' }: { children: ReactNode; brand?: SiteBrand }) {
   const [location] = useLocation();
   usePageMetadata(location);
 
@@ -175,9 +217,9 @@ export function PageFrame({ children }: { children: ReactNode }) {
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary">
         Skip to content
       </a>
-      <SiteHeader />
+      <SiteHeader brand={brand} />
       <main id="main-content">{children}</main>
-      <SiteFooter />
+      <SiteFooter brand={brand} />
     </div>
   );
 }

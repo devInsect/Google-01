@@ -84,12 +84,12 @@ export function usePageMetadata(pathname: string) {
     setMeta('property', 'og:type', 'website');
     setMeta('property', 'og:url', canonicalUrl);
     setMeta('property', 'og:image', socialImageUrl);
-    setMeta('property', 'og:image:alt', `${seoConfig.siteName} — strategic consulting for leadership teams`);
+     setMeta('property', 'og:image:alt', `${seoConfig.siteName} — market research and data collection`);
     setMeta('name', 'twitter:card', 'summary_large_image');
     setMeta('name', 'twitter:title', metadata.title);
     setMeta('name', 'twitter:description', metadata.description);
     setMeta('name', 'twitter:image', socialImageUrl);
-    setMeta('name', 'twitter:image:alt', `${seoConfig.siteName} — strategic consulting for leadership teams`);
+     setMeta('name', 'twitter:image:alt', `${seoConfig.siteName} — market research and data collection`);
     setCanonical(canonicalUrl);
     setJsonLd('execora-page-schema', {
       '@context': 'https://schema.org',
