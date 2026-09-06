@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Execora Consulting Website"
+description = "A responsive five-page consulting firm website for Execora, focused on strategic clarity, sustainable growth, services, team credibility, and contact conversion."
+version = "1.0.0"
+id = "artifacts/execora-site"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18714
+
+[services.development]
+run = "pnpm --filter @workspace/execora-site run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/execora-site", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/execora-site/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18714"
+BASE_PATH = "/"

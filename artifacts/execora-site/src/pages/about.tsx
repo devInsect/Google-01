@@ -1,0 +1,96 @@
+import { ArrowUpRight, Check, Quote } from 'lucide-react';
+import { Link } from 'wouter';
+import teamImage from '@/assets/ab87d007790c2fa49f2f89cc9691a058_1788697847211.webp';
+import strategyImage from '@/assets/7800cc93230a52a5b7d32cf0ea59d001_1788697847211.webp';
+import { ButtonLink, PageFrame } from '@/components/site-shell';
+import { SectionHeading } from '@/components/section-heading';
+
+const principles = [
+  ['01', 'Make it clearer', 'Clarity is not a slide. It is the shared understanding that makes better decisions possible.'],
+  ['02', 'Make it useful', 'We translate abstract ambition into choices, owners and operating habits that hold up under pressure.'],
+  ['03', 'Make it last', 'The best work leaves your team more capable, more aligned and less dependent on outside advice.'],
+];
+
+export default function About() {
+  return (
+    <PageFrame>
+      <section className="site-grid py-16 md:py-28">
+        <div className="container-shell grid gap-12 lg:grid-cols-[1fr_.8fr] lg:items-end">
+          <div>
+            <p className="eyebrow text-primary/65">About Execora</p>
+            <h1 className="display mt-5 max-w-3xl text-balance text-[clamp(3.15rem,7vw,7.2rem)] font-semibold leading-[.88]">The calm in the room when the stakes are high.</h1>
+          </div>
+          <div className="max-w-md lg:pb-2">
+            <p className="text-lg leading-8 text-muted-foreground">We work with leaders at moments of change to bring a sharper view of what matters, what moves the needle and what to do next.</p>
+            <div className="mt-7 flex items-center gap-3 text-sm font-semibold text-primary">
+              <span className="h-px w-10 bg-accent" /> Independent by design
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-background py-12 md:py-20">
+        <div className="container-shell">
+          <div className="image-crop aspect-[2.2] bg-secondary">
+            <img src={teamImage} alt="Leaders collaborating in a bright, considered workspace" className="object-[center_35%]" data-testid="img-about-team" />
+          </div>
+          <div className="mt-14 grid gap-10 md:grid-cols-[.8fr_1.2fr]">
+            <p className="eyebrow pt-1 text-primary/65">A different kind of partner</p>
+            <div>
+              <p className="display max-w-3xl text-[clamp(1.8rem,3.7vw,3.7rem)] font-semibold leading-[1.04]">We combine the altitude of a strategy firm with the sleeves-rolled-up instinct of an operating team.</p>
+              <p className="mt-7 max-w-2xl text-base leading-8 text-muted-foreground">Execora was founded for the space between a big decision and its lasting effect. Our work is deliberately small-team, senior-led and tailored to the real conditions your organisation is navigating.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space bg-secondary">
+        <div className="container-shell">
+          <SectionHeading eyebrow="What we believe" title="Good advice should make your team stronger." body="Our principles are simple. They shape the questions we ask, the work we produce and the way we leave an engagement." />
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
+            {principles.map(([number, title, text]) => (
+              <article key={number} className="border-t border-foreground/20 pt-5">
+                <span className="font-mono text-xs text-primary/60">{number}</span>
+                <h3 className="display mt-16 text-2xl font-semibold">{title}</h3>
+                <p className="mt-4 max-w-xs text-sm leading-6 text-muted-foreground">{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space bg-background">
+        <div className="container-shell grid gap-12 lg:grid-cols-[.8fr_1.2fr]">
+          <div className="image-crop min-h-[26rem] bg-primary">
+            <img src={strategyImage} alt="Execora consultant thinking through a strategic question" data-testid="img-about-strategy" />
+          </div>
+          <div className="flex flex-col justify-between">
+            <Quote className="text-accent" size={44} strokeWidth={1.2} />
+            <blockquote className="display mt-8 max-w-2xl text-[clamp(2rem,4.2vw,4.2rem)] font-semibold leading-[1]">“The value was not just the answer. It was the confidence to make the answer ours.”</blockquote>
+            <div className="mt-10 border-t border-foreground/15 pt-4 text-sm">
+              <p className="font-semibold">Maya Ellison</p>
+              <p className="mt-1 text-muted-foreground">Chief Operating Officer, Northline Health</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-primary py-16 text-primary-foreground md:py-24">
+        <div className="container-shell grid gap-10 md:grid-cols-[1fr_.8fr] md:items-end">
+          <div>
+            <p className="eyebrow text-accent">The human bit</p>
+            <h2 className="display mt-5 max-w-2xl text-balance text-[clamp(2.6rem,5.5vw,5.5rem)] font-semibold leading-[.9]">Serious about the work. Easy to work with.</h2>
+          </div>
+          <div className="md:pb-1">
+            <ul className="space-y-4 text-sm text-primary-foreground/70">
+              {['Senior practitioners, not hand-offs', 'Direct conversations, no theatre', 'A point of view grounded in evidence'].map((item) => (
+                <li key={item} className="flex items-center gap-3"><Check size={16} className="text-accent" />{item}</li>
+              ))}
+            </ul>
+            <Link href="/panel" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-accent" data-testid="link-about-panel">Meet our panel <ArrowUpRight size={15} /></Link>
+          </div>
+        </div>
+      </section>
+    </PageFrame>
+  );
+}

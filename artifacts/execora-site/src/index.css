@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --font-sans: var(--app-font-sans);
+  --font-serif: var(--app-font-display);
+  --font-mono: var(--app-font-mono);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: 78 31% 96%;
+  --foreground: 150 19% 12%;
+  --border: 84 13% 84%;
+  --input: 84 13% 84%;
+  --ring: 83 73% 43%;
+  --card: 0 0% 100%;
+  --card-foreground: 150 19% 12%;
+  --card-border: 84 18% 88%;
+  --primary: 151 41% 19%;
+  --primary-foreground: 72 100% 95%;
+  --secondary: 78 28% 90%;
+  --secondary-foreground: 150 19% 12%;
+  --muted: 80 17% 92%;
+  --muted-foreground: 150 8% 43%;
+  --accent: 83 73% 43%;
+  --accent-foreground: 151 41% 13%;
+  --app-font-sans: 'DM Sans', sans-serif;
+  --app-font-display: 'Manrope', sans-serif;
+  --app-font-mono: 'Space Mono', monospace;
+  --radius: 1rem;
+}
+
+.dark {
+  --background: 151 22% 10%;
+  --foreground: 78 31% 96%;
+  --border: 151 12% 24%;
+  --input: 151 12% 24%;
+  --ring: 83 73% 55%;
+  --card: 151 19% 14%;
+  --card-foreground: 78 31% 96%;
+  --card-border: 151 12% 24%;
+  --primary: 83 73% 55%;
+  --primary-foreground: 151 41% 13%;
+  --secondary: 151 16% 21%;
+  --secondary-foreground: 78 31% 96%;
+  --muted: 151 16% 19%;
+  --muted-foreground: 80 12% 68%;
+  --accent: 83 73% 55%;
+  --accent-foreground: 151 41% 13%;
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    min-width: 320px;
+  }
+  ::selection { background: hsl(var(--accent)); color: hsl(var(--accent-foreground)); }
+  :focus-visible { outline: 3px solid hsl(var(--accent)); outline-offset: 3px; }
+}
+
+@layer utilities {
+  .container-shell { width: min(100% - 2.5rem, 1180px); margin-inline: auto; }
+  .display { font-family: var(--app-font-display); letter-spacing: -0.06em; }
+  .eyebrow { font-family: var(--app-font-mono); text-transform: uppercase; letter-spacing: .12em; font-size: .67rem; }
+  .text-balance { text-wrap: balance; }
+  .section-space { padding-block: clamp(4.5rem, 10vw, 8.5rem); }
+.image-crop { position: relative; overflow: hidden; border-radius: 1.65rem; }
+  .image-crop img { width: 100%; height: 100%; object-fit: cover; display: block; }
+}
+
+.site-grid {
+  background-image: linear-gradient(to right, hsl(var(--foreground) / .045) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--foreground) / .045) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+}
+
+.article-rule { border-top: 1px solid hsl(var(--foreground) / .16); }
+
+@media (max-width: 767px) {
+  .container-shell { width: min(100% - 2rem, 1180px); }
+}
