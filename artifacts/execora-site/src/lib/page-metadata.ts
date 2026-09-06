@@ -1,0 +1,65 @@
+import { useEffect } from 'react';
+
+type PageMetadata = {
+  title: string;
+  description: string;
+};
+
+const metadataByPath: Record<string, PageMetadata> = {
+  '/': {
+    title: 'Execora | Strategic consulting for ambitious leadership teams',
+    description: 'Execora helps ambitious leadership teams make clearer decisions, build stronger operations and grow with confidence.',
+  },
+  '/about': {
+    title: 'About Execora | Senior-led strategic consulting',
+    description: 'Meet Execora, a senior-led strategic consulting partner for leadership teams navigating change, growth and important decisions.',
+  },
+  '/services': {
+    title: 'Services | Strategy, operations and growth | Execora',
+    description: 'Explore Execora services across strategy, operating performance, scale readiness and leadership effectiveness.',
+  },
+  '/panel': {
+    title: 'Our panel | Experienced operators and strategists | Execora',
+    description: 'Meet the experienced operators, strategists and specialists who bring the right perspective to each Execora engagement.',
+  },
+  '/contact': {
+    title: 'Contact Execora | Start a strategic conversation',
+    description: 'Bring Execora the decision or change you are navigating and start a thoughtful conversation with our consulting team.',
+  },
+};
+
+function setMeta(attribute: 'name' | 'property', key: string, content: string) {
+  let element = document.head.querySelector<HTMLMetaElement>(`meta[${attribute}="${key}"]`);
+  if (!element) {
+    element = document.createElement('meta');
+    element.setAttribute(attribute, key);
+    document.head.appendChild(element);
+  }
+  element.content = content;
+}
+
+export function usePageMetadata(pathname: string) {
+  useEffect(() => {
+    const normalizedPath = pathname.split('?')[0].replace(/\/+$/, '') || '/';
+    const metadata = metadataByPath[normalizedPath] ?? {
+      title: 'Page not found | Execora',
+      description: 'The page you are looking for could not be found. Return to Execora to continue exploring.',
+    };
+
+    document.title = metadata.title;
+    setMeta('name', 'description', metadata.description);
+    setMeta('property', 'og:title', metadata.title);
+    setMeta('property', 'og:description', metadata.description);
+    setMeta('property', 'og:url', `${window.location.origin}${window.location.pathname}`);
+    setMeta('name', 'twitter:title', metadata.title);
+    setMeta('name', 'twitter:description', metadata.description);
+
+    let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = `${window.location.origin}${window.location.pathname}`;
+  }, [pathname]);
+}

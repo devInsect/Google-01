@@ -30,7 +30,7 @@ export default function Services() {
       <section className="bg-background py-12 md:py-20">
         <div className="container-shell">
           <div className="image-crop aspect-[2.2] bg-secondary">
-            <img src={growthImage} alt="Senior executives reviewing a strategic plan" className="object-[center_54%]" data-testid="img-services-hero" />
+            <img src={growthImage} alt="Senior executives reviewing a strategic plan" width="1024" height="1024" loading="eager" decoding="async" className="object-[center_54%]" data-testid="img-services-hero" />
           </div>
           <div className="mt-14 grid gap-10 md:grid-cols-[.75fr_1.25fr]">
             <p className="eyebrow text-primary/65">One connected view</p>
@@ -67,7 +67,7 @@ export default function Services() {
       <section className="section-space bg-background">
         <div className="container-shell grid gap-12 lg:grid-cols-[1.2fr_.8fr] lg:items-center">
           <div className="image-crop aspect-[1.45] bg-primary">
-            <img src={browserImage} alt="Leadership team working through a strategic decision" data-testid="img-services-method" />
+            <img src={browserImage} alt="Leadership team working through a strategic decision" width="1024" height="1024" loading="lazy" decoding="async" data-testid="img-services-method" />
           </div>
           <div>
             <p className="eyebrow text-primary/65">How we work</p>

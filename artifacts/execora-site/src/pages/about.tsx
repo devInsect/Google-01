@@ -32,7 +32,7 @@ export default function About() {
       <section className="bg-background py-12 md:py-20">
         <div className="container-shell">
           <div className="image-crop aspect-[2.2] bg-secondary">
-            <img src={teamImage} alt="Leaders collaborating in a bright, considered workspace" className="object-[center_35%]" data-testid="img-about-team" />
+            <img src={teamImage} alt="Leaders collaborating in a bright, considered workspace" width="1024" height="1024" loading="eager" decoding="async" className="object-[center_35%]" data-testid="img-about-team" />
           </div>
           <div className="mt-14 grid gap-10 md:grid-cols-[.8fr_1.2fr]">
             <p className="eyebrow pt-1 text-primary/65">A different kind of partner</p>
@@ -62,7 +62,7 @@ export default function About() {
       <section className="section-space bg-background">
         <div className="container-shell grid gap-12 lg:grid-cols-[.8fr_1.2fr]">
           <div className="image-crop min-h-[26rem] bg-primary">
-            <img src={strategyImage} alt="Execora advisor thinking through a strategic question" data-testid="img-about-strategy" />
+            <img src={strategyImage} alt="Execora advisor thinking through a strategic question" width="1024" height="1024" loading="lazy" decoding="async" data-testid="img-about-strategy" />
           </div>
           <div className="flex flex-col justify-between">
             <Quote className="text-accent" size={44} strokeWidth={1.2} />

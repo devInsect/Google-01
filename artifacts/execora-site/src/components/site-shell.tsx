@@ -1,6 +1,7 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
+import { usePageMetadata } from '@/lib/page-metadata';
 
 const navigation = [
   { href: '/about', label: 'About' },
@@ -26,6 +27,7 @@ export function Logo() {
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [location] = useLocation();
+  const activePath = location.split('?')[0].replace(/\/+$/, '') || '/';
 
   useEffect(() => {
     setOpen(false);
@@ -60,12 +62,12 @@ export function SiteHeader() {
               href={item.href}
               data-testid={`link-nav-${item.label.toLowerCase().replaceAll(' ', '-')}`}
               className={`relative py-2 text-[.8rem] font-medium transition-colors hover:text-primary ${
-                location === item.href ? 'text-primary' : 'text-foreground/65'
+                activePath === item.href ? 'text-primary' : 'text-foreground/65'
               }`}
-              aria-current={location === item.href ? 'page' : undefined}
+              aria-current={activePath === item.href ? 'page' : undefined}
             >
               {item.label}
-              {location === item.href && <span className="absolute -bottom-[1.05rem] left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-accent" />}
+              {activePath === item.href && <span className="absolute -bottom-[1.05rem] left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-accent" />}
             </Link>
           ))}
         </nav>
@@ -95,13 +97,13 @@ export function SiteHeader() {
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className={`flex items-center justify-between border-b border-foreground/10 py-4 text-[1.05rem] font-medium ${
-                  location === item.href ? 'text-primary' : 'text-foreground/75'
+                  activePath === item.href ? 'text-primary' : 'text-foreground/75'
                 }`}
-                aria-current={location === item.href ? 'page' : undefined}
+                aria-current={activePath === item.href ? 'page' : undefined}
                 data-testid={`link-mobile-${item.label.toLowerCase().replaceAll(' ', '-')}`}
               >
                 <span className="flex items-center gap-3">
-                  {location === item.href && <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />}
+                  {activePath === item.href && <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />}
                   {item.label}
                 </span>
                 <ArrowUpRight size={16} />
@@ -165,10 +167,16 @@ export function SiteFooter() {
 }
 
 export function PageFrame({ children }: { children: ReactNode }) {
+  const [location] = useLocation();
+  usePageMetadata(location);
+
   return (
     <div className="min-h-[100dvh] bg-background">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary">
+        Skip to content
+      </a>
       <SiteHeader />
-      <main>{children}</main>
+      <main id="main-content">{children}</main>
       <SiteFooter />
     </div>
   );

@@ -1,4 +1,4 @@
-import { ArrowUpRight, Linkedin } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import panelImage from '@assets/generated_images/execora-about-smile-team.jpg';
 import amaraImage from '@assets/generated_images/execora-panel-amara-smile.jpg';
 import julianImage from '@assets/generated_images/execora-panel-julian-smile.jpg';
@@ -30,7 +30,7 @@ export default function Panel() {
       <section className="bg-background py-12 md:py-20">
         <div className="container-shell">
           <div className="image-crop aspect-[2.2] bg-secondary">
-            <img src={panelImage} alt="Execora panel collaborating with leadership teams" className="object-[center_40%]" data-testid="img-panel-hero" />
+            <img src={panelImage} alt="Execora panel collaborating with leadership teams" width="1024" height="1024" loading="eager" decoding="async" className="object-[center_40%]" data-testid="img-panel-hero" />
           </div>
           <div className="mt-14 grid gap-10 md:grid-cols-[.75fr_1.25fr]">
             <p className="eyebrow text-primary/65">The panel model</p>
@@ -46,7 +46,7 @@ export default function Panel() {
             {people.map((person, index) => (
               <article key={person.name} className="group">
                 <div className={`image-crop aspect-[.84] ${person.tone}`}>
-              <img src={person.image} alt={`${person.name}, ${person.role}`} className="h-full w-full object-cover" data-testid={`img-panel-person-${index}`} />
+              <img src={person.image} alt={`${person.name}, ${person.role}`} width="1024" height="1024" loading="lazy" decoding="async" className="h-full w-full object-cover" data-testid={`img-panel-person-${index}`} />
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/80 to-transparent p-5 pt-16 text-background">
                     <p className="font-semibold">{person.name}</p>
                     <p className="mt-1 text-xs text-background/70">{person.role}</p>
@@ -54,7 +54,6 @@ export default function Panel() {
                 </div>
                 <div className="flex items-center justify-between pt-4 text-xs">
                   <span className="text-muted-foreground">{person.focus}</span>
-                  <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label={`${person.name} on LinkedIn`} className="text-primary" data-testid={`link-panel-linkedin-${index}`}><Linkedin size={15} /></a>
                 </div>
               </article>
             ))}

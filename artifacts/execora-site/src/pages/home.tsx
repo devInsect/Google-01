@@ -29,7 +29,7 @@ export default function Home() {
             </div>
             <div className="relative">
               <div className="image-crop aspect-[1.28] bg-secondary">
-                <img src={heroImage} alt="Execora advisor in a bright contemporary office" className="object-cover object-center" data-testid="img-home-hero" />
+                <img src={heroImage} alt="Execora advisor in a bright contemporary office" width="1024" height="1024" fetchPriority="high" decoding="async" className="object-cover object-center" data-testid="img-home-hero" />
               </div>
               <div className="absolute -bottom-5 left-5 max-w-[12rem] rounded-2xl bg-accent p-4 text-primary shadow-lg shadow-primary/10 md:bottom-6 md:left-[-2rem]">
                 <p className="font-mono text-[.65rem] uppercase tracking-[.12em]">The outcome</p>
@@ -63,7 +63,7 @@ export default function Home() {
           />
           <div className="mt-16 grid gap-5 md:grid-cols-[1.15fr_.85fr]">
             <div className="image-crop min-h-[23rem] bg-secondary md:min-h-[34rem]">
-              <img src={guidanceImage} alt="Leadership team in a focused strategy conversation" data-testid="img-home-guidance" />
+              <img src={guidanceImage} alt="Leadership team in a focused strategy conversation" width="1024" height="1024" loading="lazy" decoding="async" data-testid="img-home-guidance" />
             </div>
             <div className="flex flex-col justify-between rounded-[1.65rem] bg-secondary p-7 md:p-10">
               <div>
@@ -115,7 +115,7 @@ export default function Home() {
           <SectionHeading eyebrow="The Execora difference" title="Senior thinking, close to the work." />
           <div className="mt-16 grid gap-10 lg:grid-cols-[.7fr_1.3fr]">
             <div className="image-crop aspect-[.9] max-w-sm bg-secondary">
-              <img src={panelImage} alt="Senior executives reviewing a strategic plan" data-testid="img-home-panel" />
+              <img src={panelImage} alt="Senior executives reviewing a strategic plan" width="1024" height="1024" loading="lazy" decoding="async" data-testid="img-home-panel" />
             </div>
             <div className="divide-y divide-foreground/15 border-y border-foreground/15">
               {[
