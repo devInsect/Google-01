@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react';
 import { ArrowUpRight, Check, Mail, MapPin, Phone } from 'lucide-react';
-import contactImage from '@assets/generated_images/execora-contact-conversation.jpg';
+import contactImage from '@assets/generated_images/execora-contact-smile.jpg';
 import { ButtonLink, PageFrame } from '@/components/site-shell';
 
 export default function Contact() {

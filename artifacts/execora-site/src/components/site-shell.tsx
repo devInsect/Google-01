@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
 
@@ -27,6 +27,28 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [location] = useLocation();
 
+  useEffect(() => {
+    setOpen(false);
+  }, [location]);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+    const closeOnDesktopResize = () => {
+      if (window.innerWidth >= 768) setOpen(false);
+    };
+
+    document.addEventListener('keydown', closeOnEscape);
+    window.addEventListener('resize', closeOnDesktopResize);
+    return () => {
+      document.removeEventListener('keydown', closeOnEscape);
+      window.removeEventListener('resize', closeOnDesktopResize);
+    };
+  }, [open]);
+
   return (
     <header className="relative z-30 border-b border-foreground/10 bg-background/95">
       <div className="container-shell flex h-[4.75rem] items-center justify-between">
@@ -40,6 +62,7 @@ export function SiteHeader() {
               className={`relative py-2 text-[.8rem] font-medium transition-colors hover:text-primary ${
                 location === item.href ? 'text-primary' : 'text-foreground/65'
               }`}
+              aria-current={location === item.href ? 'page' : undefined}
             >
               {item.label}
               {location === item.href && <span className="absolute -bottom-[1.05rem] left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-accent" />}
@@ -55,28 +78,43 @@ export function SiteHeader() {
           type="button"
           aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
           aria-expanded={open}
+          aria-controls="mobile-nav-panel"
           onClick={() => setOpen(!open)}
-          className="grid h-10 w-10 place-items-center rounded-full border border-foreground/15 md:hidden"
+          className="grid h-10 w-10 place-items-center rounded-full border border-foreground/15 bg-background text-primary md:hidden"
           data-testid="button-mobile-menu"
         >
           {open ? <X size={19} /> : <Menu size={19} />}
         </button>
       </div>
       {open && (
-        <div className="border-t border-foreground/10 bg-background px-5 pb-6 pt-3 md:hidden">
+        <div id="mobile-nav-panel" className="border-t border-foreground/10 bg-background pb-6 pt-2 md:hidden">
           <nav className="container-shell flex flex-col" aria-label="Mobile navigation">
             {navigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="flex items-center justify-between border-b border-foreground/10 py-4 text-[1.05rem] font-medium"
+                className={`flex items-center justify-between border-b border-foreground/10 py-4 text-[1.05rem] font-medium ${
+                  location === item.href ? 'text-primary' : 'text-foreground/75'
+                }`}
+                aria-current={location === item.href ? 'page' : undefined}
                 data-testid={`link-mobile-${item.label.toLowerCase().replaceAll(' ', '-')}`}
               >
-                {item.label}
+                <span className="flex items-center gap-3">
+                  {location === item.href && <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />}
+                  {item.label}
+                </span>
                 <ArrowUpRight size={16} />
               </Link>
             ))}
+            <Link
+              href="/contact"
+              onClick={() => setOpen(false)}
+              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-5 py-3.5 text-sm font-semibold text-primary-foreground"
+              data-testid="link-mobile-cta"
+            >
+              Schedule a conversation <ArrowUpRight size={15} />
+            </Link>
           </nav>
         </div>
       )}

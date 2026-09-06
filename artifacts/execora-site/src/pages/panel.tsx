@@ -1,9 +1,9 @@
 import { ArrowUpRight, Linkedin } from 'lucide-react';
-import panelImage from '@assets/generated_images/execora-about-team.jpg';
-import amaraImage from '@assets/generated_images/execora-panel-amara.jpg';
-import julianImage from '@assets/generated_images/execora-panel-julian.jpg';
-import priyaImage from '@assets/generated_images/execora-panel-priya.jpg';
-import owenImage from '@assets/generated_images/execora-panel-owen.jpg';
+import panelImage from '@assets/generated_images/execora-about-smile-team.jpg';
+import amaraImage from '@assets/generated_images/execora-panel-amara-smile.jpg';
+import julianImage from '@assets/generated_images/execora-panel-julian-smile.jpg';
+import priyaImage from '@assets/generated_images/execora-panel-priya-smile.jpg';
+import owenImage from '@assets/generated_images/execora-panel-owen-smile.jpg';
 import { ButtonLink, PageFrame } from '@/components/site-shell';
 import { SectionHeading } from '@/components/section-heading';
 

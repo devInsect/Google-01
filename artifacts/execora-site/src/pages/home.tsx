@@ -1,8 +1,8 @@
 import { ArrowRight, CircleArrowOutUpRight, Target, TrendingUp } from 'lucide-react';
 import { Link } from 'wouter';
-import heroImage from '@assets/generated_images/execora-hero-leader.jpg';
-import guidanceImage from '@assets/generated_images/execora-about-team.jpg';
-import panelImage from '@assets/generated_images/execora-services-workshop.jpg';
+import heroImage from '@assets/generated_images/execora-hero-smile.jpg';
+import guidanceImage from '@assets/generated_images/execora-about-smile-team.jpg';
+import panelImage from '@assets/generated_images/execora-services-smile-workshop.jpg';
 import { ButtonLink, PageFrame } from '@/components/site-shell';
 import { SectionHeading } from '@/components/section-heading';
 

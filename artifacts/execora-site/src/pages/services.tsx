@@ -1,6 +1,6 @@
 import { BarChart3, Compass, Layers3, Workflow } from 'lucide-react';
-import growthImage from '@assets/generated_images/execora-services-workshop.jpg';
-import browserImage from '@assets/generated_images/execora-about-team.jpg';
+import growthImage from '@assets/generated_images/execora-services-smile-workshop.jpg';
+import browserImage from '@assets/generated_images/execora-about-smile-team.jpg';
 import { ButtonLink, PageFrame } from '@/components/site-shell';
 import { SectionHeading } from '@/components/section-heading';
 

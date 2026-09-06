@@ -1,7 +1,7 @@
 import { ArrowUpRight, Check, Quote } from 'lucide-react';
 import { Link } from 'wouter';
-import teamImage from '@assets/generated_images/execora-about-team.jpg';
-import strategyImage from '@assets/generated_images/execora-hero-leader.jpg';
+import teamImage from '@assets/generated_images/execora-about-smile-team.jpg';
+import strategyImage from '@assets/generated_images/execora-hero-smile.jpg';
 import { ButtonLink, PageFrame } from '@/components/site-shell';
 import { SectionHeading } from '@/components/section-heading';
 
