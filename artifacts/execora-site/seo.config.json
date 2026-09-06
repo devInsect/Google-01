@@ -1,0 +1,8 @@
+{
+  "siteUrl": "https://g2gresearch.net",
+  "siteName": "Execora",
+  "defaultTitle": "Execora | Strategic consulting for leadership teams",
+  "defaultDescription": "Execora is a senior-led strategic consulting partner helping ambitious leadership teams make clearer decisions, strengthen operations, and grow with confidence.",
+  "socialImagePath": "/og-image.svg",
+  "routes": ["/", "/about", "/services", "/panel", "/contact"]
+}
