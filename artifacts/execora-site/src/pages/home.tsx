@@ -1,8 +1,8 @@
 import { ArrowRight, CircleArrowOutUpRight, Target, TrendingUp } from 'lucide-react';
 import { Link } from 'wouter';
-import heroImage from '@/assets/9958c55e823a1a3d43531e4d8813a66a_1788697847211.webp';
-import guidanceImage from '@/assets/7800cc93230a52a5b7d32cf0ea59d001_1788697847211.webp';
-import panelImage from '@/assets/ab87d007790c2fa49f2f89cc9691a058_1788697847211.webp';
+import heroImage from '@assets/generated_images/execora-hero-leader.jpg';
+import guidanceImage from '@assets/generated_images/execora-about-team.jpg';
+import panelImage from '@assets/generated_images/execora-services-workshop.jpg';
 import { ButtonLink, PageFrame } from '@/components/site-shell';
 import { SectionHeading } from '@/components/section-heading';
 
@@ -29,7 +29,7 @@ export default function Home() {
             </div>
             <div className="relative">
               <div className="image-crop aspect-[1.28] bg-secondary">
-                <img src={heroImage} alt="A business leader in a bright modern workspace" className="object-cover object-center" data-testid="img-home-hero" />
+                <img src={heroImage} alt="Execora advisor in a bright contemporary office" className="object-cover object-center" data-testid="img-home-hero" />
               </div>
               <div className="absolute -bottom-5 left-5 max-w-[12rem] rounded-2xl bg-accent p-4 text-primary shadow-lg shadow-primary/10 md:bottom-6 md:left-[-2rem]">
                 <p className="font-mono text-[.65rem] uppercase tracking-[.12em]">The outcome</p>
@@ -63,7 +63,7 @@ export default function Home() {
           />
           <div className="mt-16 grid gap-5 md:grid-cols-[1.15fr_.85fr]">
             <div className="image-crop min-h-[23rem] bg-secondary md:min-h-[34rem]">
-              <img src={guidanceImage} alt="Consultant working from a considered, plant-filled studio" data-testid="img-home-guidance" />
+              <img src={guidanceImage} alt="Leadership team in a focused strategy conversation" data-testid="img-home-guidance" />
             </div>
             <div className="flex flex-col justify-between rounded-[1.65rem] bg-secondary p-7 md:p-10">
               <div>
@@ -115,7 +115,7 @@ export default function Home() {
           <SectionHeading eyebrow="The Execora difference" title="Senior thinking, close to the work." />
           <div className="mt-16 grid gap-10 lg:grid-cols-[.7fr_1.3fr]">
             <div className="image-crop aspect-[.9] max-w-sm bg-secondary">
-              <img src={panelImage} alt="Execora panel and leadership team" data-testid="img-home-panel" />
+              <img src={panelImage} alt="Senior executives reviewing a strategic plan" data-testid="img-home-panel" />
             </div>
             <div className="divide-y divide-foreground/15 border-y border-foreground/15">
               {[

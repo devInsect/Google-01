@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react';
 import { ArrowUpRight, Check, Mail, MapPin, Phone } from 'lucide-react';
-import contactImage from '@/assets/0feef6217f9600337d7f9333865fe9f2_1788697847210.webp';
+import contactImage from '@assets/generated_images/execora-contact-conversation.jpg';
 import { ButtonLink, PageFrame } from '@/components/site-shell';
 
 export default function Contact() {
@@ -39,7 +39,7 @@ export default function Contact() {
         <div className="container-shell grid gap-12 lg:grid-cols-[.85fr_1.15fr]">
           <div>
             <div className="image-crop aspect-[.9] bg-secondary">
-              <img src={contactImage} alt="A calm, considered consulting workspace" className="object-[center_70%]" data-testid="img-contact" />
+              <img src={contactImage} alt="Execora advisor in a thoughtful client conversation" className="object-[center_70%]" data-testid="img-contact" />
             </div>
             <div className="mt-8 grid gap-5 border-t border-foreground/15 pt-5">
               <a href="mailto:hello@execora.co" className="flex items-center gap-4 text-sm font-medium" data-testid="link-contact-email"><span className="grid h-9 w-9 place-items-center rounded-full bg-accent text-primary"><Mail size={16} /></span>hello@execora.co</a>

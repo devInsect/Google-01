@@ -1,14 +1,17 @@
 import { ArrowUpRight, Linkedin } from 'lucide-react';
-import panelImage from '@/assets/ab87d007790c2fa49f2f89cc9691a058_1788697847211.webp';
-import heroImage from '@/assets/0feef6217f9600337d7f9333865fe9f2_1788697847210.webp';
+import panelImage from '@assets/generated_images/execora-about-team.jpg';
+import amaraImage from '@assets/generated_images/execora-panel-amara.jpg';
+import julianImage from '@assets/generated_images/execora-panel-julian.jpg';
+import priyaImage from '@assets/generated_images/execora-panel-priya.jpg';
+import owenImage from '@assets/generated_images/execora-panel-owen.jpg';
 import { ButtonLink, PageFrame } from '@/components/site-shell';
 import { SectionHeading } from '@/components/section-heading';
 
 const people = [
-  { name: 'XioFei Hasan', role: 'Managing Director', focus: 'Strategy & transformation', tone: 'bg-[#202820]' },
-  { name: 'Daniel Morgan', role: 'Senior Business Consultant', focus: 'Operating performance', tone: 'bg-[#333c3c]' },
-  { name: 'Sophia Patel', role: 'Legal Advisor', focus: 'Governance & risk', tone: 'bg-[#b7ad98]' },
-  { name: 'James Walker', role: 'Financial Advisor', focus: 'Commercial strategy', tone: 'bg-[#293233]' },
+  { name: 'Amara Cole', role: 'Strategy Partner', focus: 'Strategy & transformation', tone: 'bg-[#202820]', image: amaraImage },
+  { name: 'Julian Park', role: 'Operations Partner', focus: 'Operating performance', tone: 'bg-[#333c3c]', image: julianImage },
+  { name: 'Priya Nair', role: 'Growth Advisor', focus: 'Commercial strategy', tone: 'bg-[#b7ad98]', image: priyaImage },
+  { name: 'Owen Reed', role: 'Finance Advisor', focus: 'Transformation & value', tone: 'bg-[#293233]', image: owenImage },
 ];
 
 export default function Panel() {
@@ -43,7 +46,7 @@ export default function Panel() {
             {people.map((person, index) => (
               <article key={person.name} className="group">
                 <div className={`image-crop aspect-[.84] ${person.tone}`}>
-                  <img src={heroImage} alt="" className={`h-full w-full object-cover grayscale transition-[filter] duration-300 group-hover:grayscale-0 ${index === 0 ? 'object-[72%_34%]' : index === 1 ? 'object-[25%_70%]' : index === 2 ? 'object-[60%_40%]' : 'object-[85%_45%]'}`} aria-hidden="true" />
+              <img src={person.image} alt={`${person.name}, ${person.role}`} className="h-full w-full object-cover" data-testid={`img-panel-person-${index}`} />
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/80 to-transparent p-5 pt-16 text-background">
                     <p className="font-semibold">{person.name}</p>
                     <p className="mt-1 text-xs text-background/70">{person.role}</p>

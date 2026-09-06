@@ -1,7 +1,7 @@
 import { ArrowUpRight, Check, Quote } from 'lucide-react';
 import { Link } from 'wouter';
-import teamImage from '@/assets/ab87d007790c2fa49f2f89cc9691a058_1788697847211.webp';
-import strategyImage from '@/assets/7800cc93230a52a5b7d32cf0ea59d001_1788697847211.webp';
+import teamImage from '@assets/generated_images/execora-about-team.jpg';
+import strategyImage from '@assets/generated_images/execora-hero-leader.jpg';
 import { ButtonLink, PageFrame } from '@/components/site-shell';
 import { SectionHeading } from '@/components/section-heading';
 
@@ -62,7 +62,7 @@ export default function About() {
       <section className="section-space bg-background">
         <div className="container-shell grid gap-12 lg:grid-cols-[.8fr_1.2fr]">
           <div className="image-crop min-h-[26rem] bg-primary">
-            <img src={strategyImage} alt="Execora consultant thinking through a strategic question" data-testid="img-about-strategy" />
+            <img src={strategyImage} alt="Execora advisor thinking through a strategic question" data-testid="img-about-strategy" />
           </div>
           <div className="flex flex-col justify-between">
             <Quote className="text-accent" size={44} strokeWidth={1.2} />

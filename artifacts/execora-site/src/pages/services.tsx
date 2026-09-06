@@ -1,6 +1,6 @@
 import { BarChart3, Compass, Layers3, Workflow } from 'lucide-react';
-import growthImage from '@/assets/7800cc93230a52a5b7d32cf0ea59d001_1788697847211.webp';
-import browserImage from '@/assets/9958c55e823a1a3d43531e4d8813a66a_1788697847211.webp';
+import growthImage from '@assets/generated_images/execora-services-workshop.jpg';
+import browserImage from '@assets/generated_images/execora-about-team.jpg';
 import { ButtonLink, PageFrame } from '@/components/site-shell';
 import { SectionHeading } from '@/components/section-heading';
 
@@ -30,7 +30,7 @@ export default function Services() {
       <section className="bg-background py-12 md:py-20">
         <div className="container-shell">
           <div className="image-crop aspect-[2.2] bg-secondary">
-            <img src={growthImage} alt="Strategic guidance in a modern working environment" className="object-[center_54%]" data-testid="img-services-hero" />
+            <img src={growthImage} alt="Senior executives reviewing a strategic plan" className="object-[center_54%]" data-testid="img-services-hero" />
           </div>
           <div className="mt-14 grid gap-10 md:grid-cols-[.75fr_1.25fr]">
             <p className="eyebrow text-primary/65">One connected view</p>
@@ -67,7 +67,7 @@ export default function Services() {
       <section className="section-space bg-background">
         <div className="container-shell grid gap-12 lg:grid-cols-[1.2fr_.8fr] lg:items-center">
           <div className="image-crop aspect-[1.45] bg-primary">
-            <img src={browserImage} alt="Execora business consulting browser experience" data-testid="img-services-method" />
+            <img src={browserImage} alt="Leadership team working through a strategic decision" data-testid="img-services-method" />
           </div>
           <div>
             <p className="eyebrow text-primary/65">How we work</p>
