@@ -139,8 +139,7 @@ export function SiteFooter({ brand = 'execora' }: { brand?: SiteBrand }) {
               <p className="eyebrow mt-8 text-primary-foreground/45">Our Office</p>
               <div className="mt-5 flex flex-col gap-3 text-sm text-primary-foreground/75">
                 <span>New Delhi, INDIA</span>
-                <span>phone number</span>
-                <span>company email id</span>
+                <a href="mailto:hello@g2gresearch.net" className="transition-colors hover:text-accent" data-testid="link-footer-email">hello@g2gresearch.net</a>
               </div>
             </div>
             <div>
@@ -155,8 +154,8 @@ export function SiteFooter({ brand = 'execora' }: { brand?: SiteBrand }) {
             <div>
               <p className="eyebrow text-primary-foreground/45">Newsletter</p>
               <p className="mt-5 text-sm text-primary-foreground/75">Subscribe to our Newsletter</p>
-              <a href="mailto:hello@execora.co?subject=Newsletter subscription" className="mt-4 inline-flex border-b border-primary-foreground/30 pb-2 text-sm text-primary-foreground/75 transition-colors hover:border-accent hover:text-accent" data-testid="link-footer-newsletter">Email goes here</a>
-              <a href="mailto:hello@execora.co?subject=Newsletter subscription" className="mt-4 inline-flex text-sm font-semibold text-accent" data-testid="link-footer-newsletter-submit">Submit <ArrowUpRight size={14} className="ml-1" /></a>
+              <a href="mailto:hello@g2gresearch.net?subject=Newsletter subscription" className="mt-4 inline-flex border-b border-primary-foreground/30 pb-2 text-sm text-primary-foreground/75 transition-colors hover:border-accent hover:text-accent" data-testid="link-footer-newsletter">hello@g2gresearch.net</a>
+              <a href="mailto:hello@g2gresearch.net?subject=Newsletter subscription" className="mt-4 inline-flex text-sm font-semibold text-accent" data-testid="link-footer-newsletter-submit">Submit <ArrowUpRight size={14} className="ml-1" /></a>
             </div>
           </div>
           <div className="mt-16 border-t border-primary-foreground/15 pt-5 text-xs text-primary-foreground/45">

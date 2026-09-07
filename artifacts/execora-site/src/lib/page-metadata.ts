@@ -15,20 +15,20 @@ const metadataByPath: Record<string, PageMetadata> = {
     description: seoConfig.defaultDescription,
   },
   '/about': {
-    title: 'About Execora | Senior-led strategic consulting',
-    description: 'Meet Execora, a senior-led strategic consulting partner for leadership teams navigating change, growth and important decisions.',
+    title: 'About G2G Research | Better data for better decisions',
+    description: 'Learn how G2G Research combines an actively managed online panel, rigorous quality checks and global respondent reach.',
   },
   '/services': {
     title: 'Our Services | B2B, ITDM, HealthCare and B2C | G2G Research',
     description: 'Explore G2G Research services across B2B, ITDM, HealthCare and B2C market research and data collection.',
   },
   '/panel': {
-    title: 'Our panel | Experienced operators and strategists | Execora',
-    description: 'Meet the experienced operators, strategists and specialists who bring the right perspective to each Execora engagement.',
+    title: 'G2G Research Online Panel | Global quality respondents',
+    description: 'Explore the G2G Research online panel, its global reach, respondent profiling and quality-led approach to market research.',
   },
   '/contact': {
-    title: 'Contact Execora | Start a strategic conversation',
-    description: 'Bring Execora the decision or change you are navigating and start a thoughtful conversation with our consulting team.',
+    title: 'Contact G2G Research | Request a quote',
+    description: 'Contact G2G Research to discuss your audience, timeline, sample needs or market research project.',
   },
   '/privacy-policy': {
     title: 'Privacy Policy | G2G Research',
@@ -76,8 +76,8 @@ export function usePageMetadata(pathname: string) {
     const normalizedPath = pathname.split('?')[0].replace(/\/+$/, '') || '/';
     const isKnownRoute = Boolean(metadataByPath[normalizedPath]);
     const metadata = metadataByPath[normalizedPath] ?? {
-      title: 'Page not found | Execora',
-      description: 'The page you are looking for could not be found. Return to Execora to continue exploring.',
+      title: 'Page not found | G2G Research',
+      description: 'The page you are looking for could not be found. Return to G2G Research to continue exploring.',
     };
     const canonicalUrl = `${siteUrl}${normalizedPath === '/' ? '/' : normalizedPath}`;
     const robots = isKnownRoute ? 'index, follow' : 'noindex, nofollow';
